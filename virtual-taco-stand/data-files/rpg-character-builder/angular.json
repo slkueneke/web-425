@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "virtual-taco-stand": {
+    "rpg-character-builder": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/virtual-taco-stand",
+            "outputPath": "dist/rpg-character-builder",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "virtual-taco-stand:build:production"
+              "buildTarget": "rpg-character-builder:build:production"
             },
             "development": {
-              "buildTarget": "virtual-taco-stand:build:development"
+              "buildTarget": "rpg-character-builder:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,8 +93,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
