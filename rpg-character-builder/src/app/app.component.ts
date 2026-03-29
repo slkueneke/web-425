@@ -151,6 +151,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         vertical-align: middle;
         padding-right: 5px;
       }
+
+      @media all and (max-width:768px) {
+        footer nav .footer-links a:before {
+        content: '';
+      }
     `,
   ],
 })

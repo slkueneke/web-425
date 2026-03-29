@@ -22,13 +22,9 @@ import { Component } from '@angular/core';
         </p>
 
         <div class="cta-container">
-          <a href="#" class="font3 button">
-            Start Building
-          </a>
+          <a href="#" class="font3 button"> Start Building </a>
 
-          <a href="#" class="font3 button">
-            Explore Features
-          </a>
+          <a href="#" class="font3 button"> Explore Features </a>
         </div>
       </div>
     </section>
@@ -85,19 +81,21 @@ import { Component } from '@angular/core';
       <h3 class="font2">Guided By Creativity</h3>
 
       <p>
-        Every creator works differently, so RPG Character Builder is built to support
-        your style.
+        Every creator works differently, so RPG Character Builder is built to
+        support your style.
       </p>
 
-      <p>Prefer fast builds? Jump straight into streamlined presets.
-        Love deep customization? Explore advanced options that let you tweak
-        every detail, from combat stats to personality nuances.</p>
+      <p>
+        Prefer fast builds? Jump straight into streamlined presets. Love deep
+        customization? Explore advanced options that let you tweak every detail,
+        from combat stats to personality nuances.
+      </p>
 
-      <p> Our guided
-        prompts help spark ideas when you're stuck, while flexible tools let you
-        expand when inspiration strikes. Whether you're crafting a first-time
-        adventurer or refining a long-running character, the forge adapts to the
-        way you imagine.
+      <p>
+        Our guided prompts help spark ideas when you're stuck, while flexible
+        tools let you expand when inspiration strikes. Whether you're crafting a
+        first-time adventurer or refining a long-running character, the forge
+        adapts to the way you imagine.
       </p>
     </section>
 
@@ -121,9 +119,7 @@ import { Component } from '@angular/core';
           a character worthy of the journey ahead.
         </p>
 
-        <a href="#" class="font3 button">
-          Forge Your Hero Now
-        </a>
+        <a href="#" class="font3 button"> Forge Your Hero Now </a>
       </div>
     </section>
   `,
@@ -206,6 +202,17 @@ import { Component } from '@angular/core';
         margin-right:1.5rem;
       }
 
+      @media all and (max-width:768px) {
+        #hero,
+        #tools,
+        #begin {
+          flex-direction:column;
+        }
+
+        .img-container {
+          margin:0 auto;
+        }
+      }
     `,
   ],
 })
