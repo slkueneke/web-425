@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
           <p>
             Discover the heart of downtown flavor at our taco stand! Fresh,
             vibrant, and bursting with authentic Mexican cuisine, our tacos are
-            a downtown musttry. Where every bite tells a story of tradition and
+            a downtown must try. Where every bite tells a story of tradition and
             taste.
           </p>
         </div>
