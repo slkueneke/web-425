@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
     <section id="hero">
       <div class="img-container">
@@ -22,9 +23,9 @@ import { Component } from '@angular/core';
         </p>
 
         <div class="cta-container">
-          <a href="#" class="font3 button"> Start Building </a>
+          <a routerLink="/create-character" class="font3 button"> Start Building </a>
 
-          <a href="#" class="font3 button"> Explore Features </a>
+          <a routerLink="/signin" class="font3 button"> Sign In </a>
         </div>
       </div>
     </section>
@@ -119,7 +120,7 @@ import { Component } from '@angular/core';
           a character worthy of the journey ahead.
         </p>
 
-        <a href="#" class="font3 button"> Forge Your Hero Now </a>
+        <a routerLink="/create-character" class="font3 button"> Forge Your Hero Now </a>
       </div>
     </section>
   `,
