@@ -21,8 +21,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <nav class="navbar">
           <ul>
             <li><a class="font3" routerLink="/">Home</a></li>
-            <li><a class="font3" href="#">Character Builder</a></li>
-            <li><a class="font3" href="#">Features</a></li>
+            <li><a class="font3" routerLink="/players">Players</a></li>
+            <li><a class="font3" routerLink="/signin">Sign In</a></li>
+            <li><a class="font3" routerLink="/create-character">Create Character</a></li>
+            <li><a class="font3" routerLink="/create-guild">Create Guild</a></li>
+            <li><a class="font3" routerLink="/character-faction">Character Faction</a></li>
           </ul>
         </nav>
         <section class="content">
@@ -33,8 +36,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <nav class="footer-nav">
           <div class="footer-links">
             <a class="font3" routerLink="/">Home</a>
-            <a class="font3" href="#">Character Builder</a>
-            <a class="font3" href="#">Features</a>
+            <a class="font3" routerLink="/players">Players</a>
+            <a class="font3" routerLink="/signin">Sign In</a>
+            <a class="font3" routerLink="/create-character">Create Character</a>
+            <a class="font3" routerLink="/create-guild">Create Guild</a>
+            <a class="font3" routerLink="/character-faction">Character Faction</a>
           </div>
           <p class="font2">&copy; RPG Character Builder 2026</p>
         </nav>
@@ -120,7 +126,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       }
 
       nav li {
-        min-width: 200px;
         text-align: center;
       }
 
