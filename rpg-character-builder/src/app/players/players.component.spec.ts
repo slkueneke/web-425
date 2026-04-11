@@ -17,7 +17,13 @@ describe('PlayersComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create PlayersComponent', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should correctly display a list of characters', () => {
+    const compiled = fixture.nativeElement as HTMLElement; //get the compiled html of the component
+    const playerOptions = compiled.querySelectorAll('.player-option'); //get all the player cards
+    expect(playerOptions.length).toEqual(component.players.length); //check if the number of player options is equal to the number of options in the playerOptions array
+  })
 });
