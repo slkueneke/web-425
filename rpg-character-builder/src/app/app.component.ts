@@ -23,9 +23,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
             <li><a class="font3" routerLink="/">Home</a></li>
             <li><a class="font3" routerLink="/players">Players</a></li>
             <li><a class="font3" routerLink="/signin">Sign In</a></li>
-            <li><a class="font3" routerLink="/create-character">Create Character</a></li>
-            <li><a class="font3" routerLink="/create-guild">Create Guild</a></li>
-            <li><a class="font3" routerLink="/character-faction">Character Faction</a></li>
+            <li>
+              <a class="font3" routerLink="/create-character"
+                >Create Character</a
+              >
+            </li>
+            <li>
+              <a class="font3" routerLink="/create-guild">Create Guild</a>
+            </li>
+            <li>
+              <a class="font3" routerLink="/character-faction"
+                >Character Faction</a
+              >
+            </li>
           </ul>
         </nav>
         <section class="content">
@@ -40,7 +50,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
             <a class="font3" routerLink="/signin">Sign In</a>
             <a class="font3" routerLink="/create-character">Create Character</a>
             <a class="font3" routerLink="/create-guild">Create Guild</a>
-            <a class="font3" routerLink="/character-faction">Character Faction</a>
+            <a class="font3" routerLink="/character-faction"
+              >Character Faction</a
+            >
           </div>
           <p class="font2">&copy; RPG Character Builder 2026</p>
         </nav>
@@ -74,7 +86,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         letter-spacing: 1rem;
         font-size: 1rem;
         margin-top: 0;
-        margin-bottom:2rem;
+        margin-bottom: 2rem;
       }
 
       a {
@@ -132,9 +144,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       footer nav {
         justify-content: space-between;
         margin-top: 2rem;
-        margin-bottom:2rem;
-        border-top:2px dashed #000;
-        padding-top:1rem;
+        margin-bottom: 2rem;
+        border-top: 2px dashed #000;
+        padding-top: 1rem;
       }
 
       footer nav p {
@@ -157,9 +169,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         padding-right: 5px;
       }
 
-      @media all and (max-width:768px) {
+      @media all and (max-width: 768px) {
         footer nav .footer-links a:before {
-        content: '';
+          content: '';
+        }
       }
     `,
   ],
