@@ -17,7 +17,20 @@ describe('MenuComponent', () => {
     fixture.detectChanges();
   });
 
+  /**
+   * Created by default when the component is generated
+   * Unit Test 1
+   */
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  /**
+   * Unit Test 2
+   */
+  it('should correctly display a list of tacos', () => {
+    const compiled = fixture.nativeElement as HTMLElement; //get the compiled html of the component
+    const menuItems = compiled.querySelectorAll('.menu-item'); //get all the menu items
+    expect(menuItems.length).toEqual(component.menu.length); //check if the number of menu items is equal to the number of items in the menu array
   });
 });
