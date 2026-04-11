@@ -214,6 +214,7 @@ import { RouterLink } from '@angular/router';
           margin:0 auto;
         }
       }
+
     `,
   ],
 })
