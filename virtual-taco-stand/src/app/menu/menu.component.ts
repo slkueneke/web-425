@@ -1,8 +1,9 @@
 export interface MenuItem {
-  name: string; description:
-  string;
+  name: string;
+  description: string;
   price: number;
 }
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -47,8 +48,8 @@ styles: [`
   ]
 })
 export class MenuComponent {
-    menu:
-      MenuItem[]; constructor() {
+    menu: MenuItem[];
+      constructor() {
         this.menu = [
           {
             "name": "Carnitas Taco",

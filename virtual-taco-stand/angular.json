@@ -27,7 +27,6 @@
               }
             ],
             "styles": [
-              "src/styles.css"
             ],
             "scripts": []
           },
@@ -85,7 +84,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+
             ],
             "scripts": [],
             "karmaConfig": "karma.conf.js"
