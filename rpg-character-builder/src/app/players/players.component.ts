@@ -18,7 +18,6 @@ import { Component } from '@angular/core';
   template: `
     <div>
       <h1 class="font2 center">Players</h1>
-      <h2 class="center">Make your choice wisely.</h2>
       <ul class="player-container">
         @for (option of players; track option) {
           <li class="player-option">
