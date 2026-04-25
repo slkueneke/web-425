@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +19,16 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <h1 class="font2">RPG Character Builder</h1>
         <h2>forge your hero.</h2>
       </header>
+      <div class="sign-in-container">
+        @if (email) {
+          <p class="font2">Welcome, {{ email }}!</p>
+        }
+      </div>
       <main class="main-content">
         <nav class="navbar">
           <ul>
             <li><a class="font3" routerLink="/">Home</a></li>
             <li><a class="font3" routerLink="/players">Players</a></li>
-            <li><a class="font3" routerLink="/signin">Sign In</a></li>
             <li>
               <a class="font3" routerLink="/create-character"
                 >Create Character</a
@@ -36,6 +42,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
                 >Character Faction</a
               >
             </li>
+            <li>
+              @if (email) {
+                <a class="font3" (click)="signout()">Sign Out</a>
+              } @else {
+                <a class="font3" routerLink="signin">Sign In</a>
+              }
+            </li>
           </ul>
         </nav>
         <section class="content">
@@ -47,12 +60,16 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <div class="footer-links">
             <a class="font3" routerLink="/">Home</a>
             <a class="font3" routerLink="/players">Players</a>
-            <a class="font3" routerLink="/signin">Sign In</a>
             <a class="font3" routerLink="/create-character">Create Character</a>
             <a class="font3" routerLink="/create-guild">Create Guild</a>
             <a class="font3" routerLink="/character-faction"
               >Character Faction</a
             >
+            @if (email) {
+              <a class="font3" (click)="signout()">Sign Out</a>
+            } @else {
+              <a class="font3" routerLink="signin">Sign In</a>
+            }
           </div>
           <p class="font2">&copy; RPG Character Builder 2026</p>
         </nav>
@@ -179,4 +196,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'rpg-character-builder';
+  email?: string;
+  constructor(
+    private authService: AuthService,
+    private cookieService: CookieService,
+  ) {}
+  ngOnInit() {
+    this.authService.getAuthState().subscribe((isAuth) => {
+      if (isAuth) {
+        this.email = this.cookieService.get('session_user');
+      }
+    });
+  }
+  signout() {
+    this.authService.signout();
+  }
 }
