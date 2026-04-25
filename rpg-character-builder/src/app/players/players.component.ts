@@ -163,7 +163,7 @@ export class PlayersComponent {
       {
         name: 'Astra Veylan',
         gender: 'female',
-        class: 'Starcaller',
+        class: 'mage',
         faction: 'Celestial Concord',
         startingLocation: 'Luminous Spire',
         funFact: 'She can predict meteor showers with eerie accuracy.',
@@ -171,7 +171,7 @@ export class PlayersComponent {
       {
         name: 'Brannik Thornshield',
         gender: 'male',
-        class: 'Guardian',
+        class: 'warrior',
         faction: 'Ironwall Legion',
         startingLocation: 'Fort Granitehold',
         funFact: 'He once stopped a charging boar with just his shield.',
@@ -179,7 +179,7 @@ export class PlayersComponent {
       {
         name: 'Kess Emberline',
         gender: 'other',
-        class: 'Pyromancer',
+        class: 'mage',
         faction: 'Ashen Circle',
         startingLocation: 'Cinderstep Outpost',
         funFact: 'They can ignite candles by snapping their fingers.',
@@ -187,7 +187,7 @@ export class PlayersComponent {
       {
         name: 'Lyra Moonsong',
         gender: 'female',
-        class: 'Bard',
+        class: 'mage',
         faction: 'Wandering Chorus',
         startingLocation: 'Silverwind Caravan',
         funFact: 'Her lullabies can calm even wild beasts.',
@@ -195,7 +195,7 @@ export class PlayersComponent {
       {
         name: 'Dorian Blackroot',
         gender: 'male',
-        class: 'Shadowblade',
+        class: 'rouge',
         faction: 'Nightveil Syndicate',
         startingLocation: 'Gloommarket Alley',
         funFact: 'He collects rare poisons as a hobby.',
@@ -203,7 +203,7 @@ export class PlayersComponent {
       {
         name: 'Tova Flintbreaker',
         gender: 'female',
-        class: 'Berserker',
+        class: 'warrior',
         faction: 'Stoneblood Clan',
         startingLocation: 'Craghammer Village',
         funFact: 'She arm-wrestled a troll and nearly won.',
@@ -211,7 +211,7 @@ export class PlayersComponent {
       {
         name: 'Elyndor Wraithleaf',
         gender: 'other',
-        class: 'Druid',
+        class: 'mage',
         faction: 'Verdant Pact',
         startingLocation: 'Whispergrove',
         funFact: 'Plants grow faster when they hum nearby.',
@@ -219,7 +219,7 @@ export class PlayersComponent {
       {
         name: 'Rook Halverson',
         gender: 'male',
-        class: 'Ranger',
+        class: 'rogue',
         faction: 'Falconwatch Order',
         startingLocation: 'Highwind Cliffs',
         funFact: 'His falcon, Sable, refuses to listen to anyone else.',
@@ -227,7 +227,7 @@ export class PlayersComponent {
       {
         name: 'Seraphine Vale',
         gender: 'female',
-        class: 'Cleric',
+        class: 'rogue',
         faction: 'Sanctum of Dawn',
         startingLocation: 'Radiant Chapel',
         funFact: 'She brews surprisingly good herbal tea.',
@@ -235,7 +235,7 @@ export class PlayersComponent {
       {
         name: 'Merrit Quillforge',
         gender: 'other',
-        class: 'Artificer',
+        class: 'warrior',
         faction: 'Cogwright Guild',
         startingLocation: 'Gearfall Workshop',
         funFact:
