@@ -121,7 +121,7 @@ import { CommonModule } from '@angular/common';
         flex: 1;
       }
       fieldset {
-        marginbottom: 20px;
+        margin-bottom: 20px;
       }
       label,
       select,
@@ -156,7 +156,7 @@ import { CommonModule } from '@angular/common';
         margin-right: 5px;
       }
       .order-summary li {
-        marginbottom: 10px;
+        margin-bottom: 10px;
         padding: 5px;
       }
     `,

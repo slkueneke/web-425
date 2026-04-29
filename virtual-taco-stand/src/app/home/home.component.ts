@@ -78,7 +78,7 @@ customers-->
         box-sizing: border-box;
       }
       .highlight img {
-        maxwidth: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: cover;
       }
