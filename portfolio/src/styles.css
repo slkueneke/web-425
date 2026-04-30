@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+/*fonts*/
+.font-outline {
+  font-family: "Tourney", sans-serif;
+}
+.font-bubble {
+  font-family: "Bungee Shade", sans-serif;
+}
+.font-mono {
+  font-family: "Google Sans Code", monospace;
+}
+.font-clean {
+  font-family: "Quicksand", sans-serif;
+}
+
+/*colors*/
+.color-light {
+  color:#e9e9e7ff;
+}
+.bg-light {
+  background-color:#e9e9e7ff;
+}
+.color-sage {
+  color: #a8a892ff;
+}
+.bg-sage {
+  background-color: #a8a892ff;
+}
+.color-grey {
+  color: #4c4c47ff;
+}
+.bg-grey {
+  background-color: #4c4c47ff;
+}
+.color-dark {
+  color: #1b1b1bff;
+}
+.bg-dark {
+  background-color: #1b1b1bff;
+}
+
+/*top nav*/
+
+/*bottom nav*/
+
+/*images*/
+
