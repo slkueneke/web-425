@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
-    <p>
-      home works!
-    </p>
+    <section class="colLeft"></section>
+    <section class="colRight"></section>
   `,
-  styles: ``
+  styles: [``],
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
