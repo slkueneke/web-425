@@ -6,13 +6,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet, RouterLink],
   template: `
-    <div id="circle"></div>
-    <div id="animation">
-      <p class="font-mono">>&nbsp;</p>
-      <p class="font-mono" id="initText">init portfolio</p>
-      <p class="font-mono" id="caret">_</p>
+    <div id="circle" [class.circleFlyIn]="circleFlyIn"></div>
+    <div id="animation" [class.hideText]="hideText">
+      <p>>&nbsp;</p>
+      <p [class.typing]="typing" id="initText">init portfolio</p>
+      <p [class.blinkCaret]="blinkCaret" id="caret">_</p>
     </div>
-    <div class="wrapper">
+    <div id="wrapper" [class.displayText]="displayText">
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -114,17 +114,24 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styles: [
     `
       /*everything hidden initially*/
-      #name,
-      header li,
-      footer li,
-      .content {
-        display: none;
+      #wrapper {
+        opacity: 0;
+        margin: 0 auto;
+        max-width: 80%;
       }
 
       #animation {
         width: 393px;
         margin: 0 auto;
         display: flex;
+        position: fixed;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+      }
+
+      #animation p {
+        font-family: 'Google Sans Code', monospace;
       }
 
       #initText {
@@ -151,11 +158,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         border-radius: 0 0 100% 0;
 
         transform: translate(-100%);
-      }
-
-      .wrapper {
-        margin: 0 auto;
-        max-width: 80%;
       }
 
       /*navs*/
@@ -222,6 +224,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         white-space: nowrap;
       }
 
+      /*ANIMATIONS*/
       @keyframes typing {
         from {
           width: 0;
@@ -253,7 +256,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         100% {
           opacity: 1;
         }
-
       }
       #caret.blinkCaret {
         animation: blink-caret 3s;
@@ -273,18 +275,53 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
       @keyframes displayText {
         from {
-          display: none;
+          opacity: 0;
         }
         to {
-          display: initial;
+          opacity: 1;
         }
       }
-      .displayText {
+      #wrapper.displayText {
         animation: displayText 1s ease-in-out forwards;
+      }
+
+      @keyframes hideText {
+        from {
+          opacity:1
+        }
+        to {
+          opacity:0;
+          display: none;
+        }
+      }
+      .hideText {
+        animation: hideText 0.5s ease-in-out forwards;
       }
     `,
   ],
 })
 export class AppComponent {
   title = 'portfolio';
+
+  typing = false;
+  blinkCaret = false;
+  circleFlyIn = false;
+  displayText = false;
+  hideText = false;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.typing = true;
+    }, 2000);
+
+    setTimeout(() => {
+      this.blinkCaret = true;
+    }, 5000);
+
+    setTimeout(() => {
+      this.circleFlyIn = true;
+      this.displayText = true;
+      this.hideText = true;
+    }, 6000);
+  }
 }
