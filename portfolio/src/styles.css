@@ -39,6 +39,16 @@
   background-color: #1b1b1bff;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 a,
 a:visited {
   color:#1b1b1bff;

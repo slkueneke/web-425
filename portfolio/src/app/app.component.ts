@@ -26,6 +26,16 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         </div>
 
         <nav>
+          <svg
+            class="mobile tablet"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+          >
+            <path
+              fill="#4c4c47"
+              d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"
+            />
+          </svg>
           <ul>
             <li>
               <a routerLink="/">Home</a>
@@ -121,7 +131,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       }
 
       #animation {
-        width: 393px;
+        width: 100%;
+        max-width: 393px;
         margin: 0 auto;
         display: flex;
         position: fixed;
@@ -152,8 +163,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         top: 0;
         left: 0;
         background-color: #a8a892;
-        height: 650px;
-        width: 650px;
+        width: 100vw;
+        height: 100vw;
+        max-width: 650px;
+        max-height: 650px;
         z-index: -1;
         border-radius: 0 0 100% 0;
 
@@ -170,7 +183,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         display: flex;
         width: 100%;
         justify-content: flex-end;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
       }
 
       footer nav ul {
@@ -217,6 +230,12 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
       footer svg:hover path {
         fill: #a8a892;
+      }
+
+      svg.mobile.tablet {
+        display: none;
+        cursor: pointer;
+        width: 50px;
       }
 
       h1 {
@@ -287,15 +306,78 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
       @keyframes hideText {
         from {
-          opacity:1
+          opacity: 1;
         }
         to {
-          opacity:0;
+          opacity: 0;
           display: none;
         }
       }
       .hideText {
         animation: hideText 0.5s ease-in-out forwards;
+      }
+
+      /*MEDIA QUERIES*/
+      @media all and (max-width: 1024px) {
+        /*mobile + tablet*/
+        svg.mobile.tablet {
+          display: flex;
+        }
+
+        #wrapper {
+          width: 100%;
+          max-width: 100%;
+          margin: 1em;
+        }
+
+        header {
+          justify-content: space-between;
+        }
+
+        header nav ul {
+          display: none;
+        }
+
+        footer nav ul {
+          flex-direction: column;
+          margin: 0;
+        }
+
+        #footer_socialLinks {
+          flex-direction: row;
+          margin: 0 1em 0 0;
+        }
+
+        #footer_socialLinks li {
+          align-self: flex-end;
+          margin: 0 1em;
+        }
+
+        footer nav li {
+          align-self: flex-start;
+        }
+      }
+
+      @media all and (max-width: 576px) {
+        /*mobile*/
+        #circle {
+          width: 80%;
+          height: 40%;
+        }
+
+        #name h1 {
+          font-size: 1.5em;
+          white-space: normal;
+        }
+
+        header li:not(:last-child),
+        footer li:not(:last-child) {
+          margin-right: 1em;
+        }
+
+        #animation {
+          white-space:normal;
+        }
       }
     `,
   ],
@@ -310,6 +392,7 @@ export class AppComponent {
   hideText = false;
 
   ngOnInit() {
+    /*initial load animations*/
     setTimeout(() => {
       this.typing = true;
     }, 2000);
