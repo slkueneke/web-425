@@ -25,17 +25,31 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <h1>> Shannon Kueneke<span>_</span></h1>
         </div>
 
-        <nav>
-          <svg
-            class="mobile tablet"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640"
-          >
+        <nav class="desktop">
+          <ul>
+            <li>
+              <a routerLink="/">Home</a>
+            </li>
+            <li>
+              <a routerLink="/resume">Resume</a>
+            </li>
+            <li>
+              <a routerLink="/about">About</a>
+            </li>
+            <li>
+              <a routerLink="/projects">Projects</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mobile tablet">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path
               fill="#4c4c47"
               d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"
             />
           </svg>
+
           <ul>
             <li>
               <a routerLink="/">Home</a>
@@ -164,9 +178,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         left: 0;
         background-color: #a8a892;
         width: 100vw;
-        height: 100vw;
+        height: 100vh;
         max-width: 650px;
-        max-height: 650px;
+        max-height: 555px;
         z-index: -1;
         border-radius: 0 0 100% 0;
 
@@ -181,8 +195,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       header ul,
       footer ul {
         display: flex;
-        width: 100%;
-        justify-content: flex-end;
+        justify-content: space-between;
         flex-wrap: wrap;
       }
 
@@ -232,10 +245,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         fill: #a8a892;
       }
 
-      svg.mobile.tablet {
+      .mobile.tablet {
         display: none;
-        cursor: pointer;
-        width: 50px;
       }
 
       h1 {
@@ -319,25 +330,48 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
       /*MEDIA QUERIES*/
       @media all and (max-width: 1024px) {
+        .desktop,
+        nav.desktop,
+        .desktop ul,
+        .desktop ul li {
+          display: none;
+        }
+
         /*mobile + tablet*/
-        svg.mobile.tablet {
-          display: flex;
+        .mobile.tablet {
+          display: inline-flex;
+        }
+
+        .mobile.tablet svg {
+          cursor: pointer;
+          width: 40px;
+        }
+
+        nav.mobile.tablet ul {
+          display:none;
         }
 
         #wrapper {
           width: 100%;
           max-width: 100%;
-          margin: 1em;
         }
 
         header {
           justify-content: space-between;
+          padding: 5px;
         }
 
-        header nav ul {
-          display: none;
+        header nav {
+          width: fit-content;
         }
 
+        #name {
+          padding-left: 10px;
+        }
+
+        footer {
+          padding: 0 0 10px 20px;
+        }
         footer nav ul {
           flex-direction: column;
           margin: 0;
@@ -376,7 +410,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         }
 
         #animation {
-          white-space:normal;
+          white-space: normal;
         }
       }
     `,
