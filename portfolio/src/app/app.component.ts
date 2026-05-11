@@ -43,14 +43,21 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         </nav>
 
         <nav class="mobile tablet">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            (click)="openNav()"
+          >
             <path
               fill="#4c4c47"
               d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"
             />
           </svg>
 
-          <ul>
+          <ul
+            [class.slideDownNav]="slideDownNav"
+            [class.slideUpNav]="slideUpNav"
+          >
             <li>
               <a routerLink="/">Home</a>
             </li>
@@ -62,6 +69,28 @@ import { RouterLink, RouterOutlet } from '@angular/router';
             </li>
             <li>
               <a routerLink="/projects">Projects</a>
+            </li>
+            <li>
+              <a
+                id="navClose"
+                href="javascript:;"
+                title="Close Menu"
+                (click)="closeNav()"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-up"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+                  />
+                </svg>
+              </a>
             </li>
           </ul>
         </nav>
@@ -141,7 +170,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       #wrapper {
         opacity: 0;
         margin: 0 auto;
-        max-width: 80%;
+        max-width: 90%;
       }
 
       #animation {
@@ -179,7 +208,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         background-color: #a8a892;
         width: 100vw;
         height: 100vh;
-        max-width: 650px;
+        max-width: 570px;
         max-height: 555px;
         z-index: -1;
         border-radius: 0 0 100% 0;
@@ -328,6 +357,30 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         animation: hideText 0.5s ease-in-out forwards;
       }
 
+      @keyframes slideUpNav {
+        from {
+          top: 0;
+        }
+        to {
+          top: -100%;
+        }
+      }
+      .slideUpNav {
+        animation: slideUpNav 0.5s ease-in-out forwards;
+      }
+
+      @keyframes slideDownNav {
+        from {
+          top: -100%;
+        }
+        to {
+          top: 0;
+        }
+      }
+      .slideDownNav {
+        animation: slideDownNav 0.5s ease-in-out forwards;
+      }
+
       /*MEDIA QUERIES*/
       @media all and (max-width: 1024px) {
         .desktop,
@@ -345,10 +398,28 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         .mobile.tablet svg {
           cursor: pointer;
           width: 40px;
+          height: 40px;
+          padding: 0.5em 0 0 0;
         }
 
         nav.mobile.tablet ul {
-          display:none;
+          top: -100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          width: 100%;
+          background: #fff;
+        }
+
+        nav.mobile.tablet ul li {
+          display: block;
+          width: 100%;
+          text-align: center;
+          margin: 1em;
+        }
+
+        nav.mobile.tablet ul li:not(:last-child):hover::before {
+          content: '> ';
         }
 
         #wrapper {
@@ -404,7 +475,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           white-space: normal;
         }
 
-        header li:not(:last-child),
+        /*header li:not(:last-child),*/
         footer li:not(:last-child) {
           margin-right: 1em;
         }
@@ -424,6 +495,8 @@ export class AppComponent {
   circleFlyIn = false;
   displayText = false;
   hideText = false;
+  slideDownNav = false;
+  slideUpNav = false;
 
   ngOnInit() {
     /*initial load animations*/
@@ -440,5 +513,17 @@ export class AppComponent {
       this.displayText = true;
       this.hideText = true;
     }, 6000);
+  }
+
+  //hamburger click
+  openNav(): void {
+    this.slideDownNav = true;
+    this.slideUpNav = false;
+  }
+
+  //up chevron click
+  closeNav(): void {
+    this.slideDownNav = false;
+    this.slideUpNav = true;
   }
 }
