@@ -48,7 +48,6 @@ img {
   height: auto;
 }
 
-
 a,
 a:visited {
   color:#1b1b1bff;
@@ -65,11 +64,6 @@ body {
   background-size: 20px 20px; /* Adjust spacing between dots */
 }
 
-.content {
-  display:flex;
-  height:80vh; /*remove once content is added*/
-}
-
 .content p,
 .content a {
   font-family: 'Quicksand', sans-serif;
@@ -78,6 +72,10 @@ body {
 h1 {
   font-family: 'Google Sans Code', monospace;
   color:#1b1b1bff;
+}
+
+h2 {
+  font-weight:normal;
 }
 
 ul,
@@ -89,12 +87,36 @@ body {
 .cta {
   background-color: #a8a892ff;
   border: 3px solid rgb(102, 102, 88);
-  padding: 3px 5px;
+  padding: 10px 15px;
   max-width: fit-content;
   white-space: nowrap;
+  cursor:pointer;
+  margin-right:1em;
+  font-family: "Google Sans Code", monospace;
 }
 
-/*.colLeft, .colRight {
+.cta:hover {
+  background-color: #4c4c47ff;
+  border-color:#a8a892ff;
+  color:#f5f5f4;
+}
 
-}*/
+.flexWrapper {
+  display: flex;
+  min-height:70vh;
+}
+
+.colLeft {
+  flex-grow:1;
+  /*order: 2;*/
+  width:50%;
+}
+
+.colRight {
+  flex-grow:2;
+  /*order:1;*/
+  width:50%;
+}
+
+
 
