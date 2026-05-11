@@ -56,6 +56,15 @@ import { Router, RouterLink } from '@angular/router';
         font-size: 2em;
       }
 
+      .colRight p {
+        font-size:1.2em;
+      }
+
+      #topNav_home,
+      #mobNav_home {
+        font-weight: bold;
+      }
+
       @media all and (max-width: 576px) {
         .flexWrapper {
           flex-direction: column;

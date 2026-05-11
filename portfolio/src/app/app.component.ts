@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, RouterModule],
   template: `
     <div id="circle" [class.circleFlyIn]="circleFlyIn"></div>
     <div id="animation" [class.hideText]="hideText">
@@ -28,16 +28,21 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <nav class="desktop">
           <ul>
             <li>
-              <a routerLink="/">Home</a>
+              <a
+                routerLink="/"
+                routerLinkActive="bold"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Home</a
+              >
             </li>
             <li>
-              <a routerLink="/resume">Resume</a>
+              <a routerLink="/resume" routerLinkActive="bold">Resume</a>
             </li>
             <li>
-              <a routerLink="/about">About</a>
+              <a routerLink="/about" routerLinkActive="bold">About</a>
             </li>
             <li>
-              <a routerLink="/projects">Projects</a>
+              <a routerLink="/projects" routerLinkActive="bold">Projects</a>
             </li>
           </ul>
         </nav>
@@ -59,16 +64,37 @@ import { RouterLink, RouterOutlet } from '@angular/router';
             [class.slideUpNav]="slideUpNav"
           >
             <li>
-              <a routerLink="/">Home</a>
+              <a
+                routerLink="/"
+                routerLinkActive="bold"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="closeNav()"
+                >Home</a
+              >
             </li>
             <li>
-              <a routerLink="/resume">Resume</a>
+              <a
+                routerLink="/resume"
+                routerLinkActive="bold"
+                (click)="closeNav()"
+                >Resume</a
+              >
             </li>
             <li>
-              <a routerLink="/about">About</a>
+              <a
+                routerLink="/about"
+                routerLinkActive="bold"
+                (click)="closeNav()"
+                >About</a
+              >
             </li>
             <li>
-              <a routerLink="/projects">Projects</a>
+              <a
+                routerLink="/projects"
+                routerLinkActive="bold"
+                (click)="closeNav()"
+                >Projects</a
+              >
             </li>
             <li>
               <a
@@ -166,6 +192,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   `,
   styles: [
     `
+      nav ul li a.bold {
+        font-weight: bold;
+      }
+
       /*everything hidden initially*/
       #wrapper {
         opacity: 0;
