@@ -60,50 +60,8 @@ import { Router, RouterLink } from '@angular/router';
         font-size:1.2em;
       }
 
-      #topNav_home,
-      #mobNav_home {
-        font-weight: bold;
-      }
 
-      @media all and (max-width: 576px) {
-        .flexWrapper {
-          flex-direction: column;
-        }
 
-        .colRight {
-          order: 1;
-          width: 100%;
-        }
-
-        .colRight p {
-          font-size: 1.5em;
-        }
-
-        .colLeft {
-          order: 2;
-          width: 100%;
-          margin-bottom: 4em;
-        }
-
-        .colLeft h2 {
-          text-align: center;
-          font-size: 2em;
-        }
-
-        .colLeft ul {
-          font-size: 1.25em;
-          width: fit-content;
-          margin: 0 auto;
-        }
-
-        .cta {
-          width: 100%;
-          display: block;
-          max-width: unset;
-          margin-bottom: 1.5em;
-          font-size: 1.25em;
-        }
-      }
     `,
   ],
 })
