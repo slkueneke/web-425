@@ -240,7 +240,7 @@ import { CommonModule } from '@angular/common';
       }
       scrollbar-width: none;
 
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity;
     }
 
     .resumeSec svg {
@@ -332,21 +332,52 @@ import { CommonModule } from '@angular/common';
         max-width: 80%;
       }
 
-      #resumeNav h2,
-      #resumeNav ul {
-        display: none;
-      }
-
       .flexWrapper {
         flex-direction: column;
       }
 
       .colLeft {
-        order: 2;
+        order: 1;
+        margin-bottom: 1em;
+        width: 100%;
+      }
+
+      .colLeft h2 {
+        font-size: 1em;
+        text-align: center;
+      }
+
+      .colLeft ul {
+        font-size: 1em;
+        width: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      #resumeNav a.active {
+        font-weight: bold;
+      }
+
+      #resumeNav a.active::before {
+        content: none;
+      }
+
+      #resumeNav button {
+        padding: 8px;
+        font-size: 0.8em;
+        max-width: fit-content;
+        margin: 0 auto;
+        display: block;
       }
 
       .colRight {
-        order: 1;
+        order: 2;
+        width: 100%;
+      }
+
+      .colRight > section {
+        padding:0 1em;
       }
     }
   `,

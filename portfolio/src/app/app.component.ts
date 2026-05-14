@@ -471,6 +471,10 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
           padding-left: 10px;
         }
 
+        .content {
+          padding: 0 3em;
+        }
+
         footer {
           padding: 0 0 10px 20px;
         }
@@ -494,6 +498,12 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         }
       }
 
+      @media all and (max-width: 768px) {
+        .content {
+          padding:0;
+        }
+      }
+
       @media all and (max-width: 576px) {
         /*mobile*/
         #circle {
@@ -513,6 +523,11 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 
         #animation {
           white-space: normal;
+        }
+
+        .mobile.tablet #navClose svg {
+          height:20px;
+          width:20px;
         }
       }
     `,
