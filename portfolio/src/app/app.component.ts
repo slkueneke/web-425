@@ -289,7 +289,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
       }
 
       header nav li {
-        font-size: 1.2em;
+        font-size: 1em;
       }
 
       footer nav li {
@@ -311,6 +311,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
       h1 {
         font-weight: normal;
         white-space: nowrap;
+        letter-spacing:2px;
       }
 
       /*ANIMATIONS*/

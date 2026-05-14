@@ -25,7 +25,7 @@ export interface ResumeEducation {
   college: string
 }
 
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -38,10 +38,40 @@ import { CommonModule } from '@angular/common';
         <section id="resumeNav">
           <h2 class="font-bubble">Jump To Section</h2>
           <ul class="font-clean">
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#education">Education</a></li>
+            <li>
+              <a
+                id="nav_exeperience"
+                (click)="scrollToSection('experience'); $event.preventDefault()"
+                data-target="experience"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a
+                id="nav_skills"
+                (click)="scrollToSection('skills'); $event.preventDefault()"
+                data-target="skills"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                id="nav_certifications"
+                (click)="
+                  scrollToSection('certifications'); $event.preventDefault()
+                "
+                data-target="certifications"
+                >Certifications</a
+              >
+            </li>
+            <li>
+              <a
+                id="nav_education"
+                (click)="scrollToSection('education'); $event.preventDefault()"
+                data-target="education"
+                >Education</a
+              >
+            </li>
           </ul>
 
           <button class="cta cta-onDark">
@@ -57,7 +87,7 @@ import { CommonModule } from '@angular/common';
       </section>
 
       <section class="colRight">
-        <h2 class="font-mono color-sage subpage">Resume_</h2>
+        <h2 class="font-mono subpage">Resume_</h2>
 
         <section>
           <section class="resumeSec" id="experience">
@@ -72,6 +102,19 @@ import { CommonModule } from '@angular/common';
                 <li>{{ exp.description }}</li>
               </ul>
             }
+
+            <svg
+              class="bounce"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              (click)="scrollToSection('skills')"
+            >
+              <!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+              <path
+                fill="#4d4d48"
+                d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z"
+              />
+            </svg>
           </section>
 
           <section class="resumeSec" id="skills">
@@ -103,6 +146,19 @@ import { CommonModule } from '@angular/common';
                 </li>
               }
             </ul>
+
+            <svg
+              class="bounce"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              (click)="scrollToSection('certifications')"
+            >
+              <!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+              <path
+                fill="#4d4d48"
+                d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z"
+              />
+            </svg>
           </section>
 
           <section class="resumeSec" id="certifications">
@@ -117,6 +173,19 @@ import { CommonModule } from '@angular/common';
                 </li>
               }
             </ul>
+
+            <svg
+              class="bounce"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              (click)="scrollToSection('education')"
+            >
+              <!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+              <path
+                fill="#4d4d48"
+                d="M297.4 470.6C309.9 483.1 330.2 483.1 342.7 470.6L534.7 278.6C547.2 266.1 547.2 245.8 534.7 233.3C522.2 220.8 501.9 220.8 489.4 233.3L320 402.7L150.6 233.4C138.1 220.9 117.8 220.9 105.3 233.4C92.8 245.9 92.8 266.2 105.3 278.7L297.3 470.7z"
+              />
+            </svg>
           </section>
 
           <section class="resumeSec" id="education">
@@ -156,6 +225,30 @@ import { CommonModule } from '@angular/common';
       margin-bottom: 2em;
     }
 
+    .resumeSec {
+      min-height: 100vh;
+      scroll-snap-align: start;
+    }
+
+    .colRight > section {
+      height: 100vh;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none;
+
+      scroll-snap-type: y mandatory;
+    }
+
+    .resumeSec svg {
+      width: 30px;
+      margin: 0 auto;
+      display: block;
+    }
+
     .resumeSec ul {
       list-style: none;
     }
@@ -174,7 +267,7 @@ import { CommonModule } from '@angular/common';
       list-style: none;
       flex-wrap: wrap;
       gap: 1em;
-      margin-bottom:2em;
+      margin-bottom: 2em;
     }
 
     #skills li {
@@ -186,7 +279,7 @@ import { CommonModule } from '@angular/common';
 
     #certifications li,
     #education li {
-      margin-bottom:2em;
+      margin-bottom: 2em;
     }
 
     h5,
@@ -199,11 +292,38 @@ import { CommonModule } from '@angular/common';
     }
 
     .bold {
-      font-size:1.1em;
+      font-size: 1.1em;
     }
 
     #skills h5 {
-      margin-bottom:1em;
+      margin-bottom: 1em;
+    }
+
+    #resumeNav li:hover,
+    .bounce:hover {
+      cursor: pointer;
+    }
+
+    #resumeNav a.active {
+      font-weight: bold;
+    }
+
+    #resumeNav a.active::before {
+      content: '> ';
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .bounce {
+      animation: bounce 2s infinite ease-in-out;
     }
 
     @media all and (max-width: 768px) {
@@ -236,6 +356,8 @@ export class ResumeComponent {
   skills: ResumeSkills;
   certifications: ResumeCertifications[];
   education: ResumeEducation[];
+
+  private observer!: IntersectionObserver;
 
   constructor() {
     this.experience = [
@@ -325,5 +447,54 @@ export class ResumeComponent {
         college: 'California State University - San Marcos',
       },
     ];
+  }
+
+  ngAfterViewInit() {
+    const container = document.querySelector('.colRight > section');
+    container?.addEventListener('scroll', () => this.updateActiveNav());
+  }
+
+  updateActiveNav() {
+    const container = document.querySelector('.colRight > section');
+    const sections = Array.from(document.querySelectorAll('.resumeSec'));
+    const navLinks = document.querySelectorAll('#resumeNav a');
+
+    if (!container) return;
+
+    // Find the section closest to the top of the container
+    let closestSection = sections[0];
+    let minDistance = Infinity;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const distance = Math.abs(rect.top - containerRect.top);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestSection = section;
+      }
+    });
+
+    const activeId = closestSection.getAttribute('id');
+
+    navLinks.forEach((link) => {
+      link.classList.toggle(
+        'active',
+        link.getAttribute('data-target') === activeId,
+      );
+    });
+  }
+
+  scrollToSection(id: string) {
+    const container = document.querySelector('.colRight > section');
+    const target = document.getElementById(id);
+
+    if (container && target) {
+      container.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   }
 }

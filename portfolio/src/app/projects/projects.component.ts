@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
 
       <section class="colRight">
         <section>
-          <h2 class="font-mono color-sage subpage">Projects_</h2>
+          <h2 class="font-mono subpage">Projects_</h2>
 
           <section class="projSec" id="">
             <h3 class="font-bubble">Name</h3>
