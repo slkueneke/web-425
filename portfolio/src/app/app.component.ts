@@ -22,7 +22,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 
       <header>
         <div id="name">
-          <h1>> Shannon Kueneke<span>_</span></h1>
+          <h1>> Shannon Kueneke<span class="blinkName">_</span></h1>
         </div>
 
         <nav class="desktop">
@@ -258,6 +258,11 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         flex-wrap: wrap;
       }
 
+      footer {
+        margin-top: 2em;
+        margin-bottom: 1em;
+      }
+
       footer nav ul {
         justify-content: flex-start;
       }
@@ -311,7 +316,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
       h1 {
         font-weight: normal;
         white-space: nowrap;
-        letter-spacing:2px;
+        letter-spacing: 2px;
       }
 
       /*ANIMATIONS*/
@@ -412,6 +417,27 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         animation: slideDownNav 0.5s ease-in-out forwards;
       }
 
+      .blinkName {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+      }
+
+      h1:hover .blinkName {
+        animation: blinkName 0.8s steps(2, start) infinite;
+      }
+
+      @keyframes blinkName {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
       /*MEDIA QUERIES*/
       @media all and (max-width: 1024px) {
         .desktop,
@@ -478,6 +504,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         footer {
           padding: 0 0 10px 20px;
         }
+
         footer nav ul {
           flex-direction: column;
           margin: 0;
@@ -500,7 +527,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 
       @media all and (max-width: 768px) {
         .content {
-          padding:0;
+          padding: 0;
         }
       }
 
@@ -526,8 +553,8 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         }
 
         .mobile.tablet #navClose svg {
-          height:20px;
-          width:20px;
+          height: 20px;
+          width: 20px;
         }
       }
     `,
