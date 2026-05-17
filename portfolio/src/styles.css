@@ -130,13 +130,13 @@ body {
 .colLeft {
   flex-grow: 1;
   /*order: 2;*/
-  width: 50%;
+  width: 40%;
 }
 
 .colRight {
   flex-grow: 2;
   /*order:1;*/
-  width: 50%;
+  width: 60%;
 }
 
 .colLeft ul {
@@ -152,7 +152,13 @@ body {
   color:#1b1b1bff;
   font-weight:bold;
 }
+@media all and (max-width: 768px) {
+  .desktop,
+  .cta.desktop {
+    display:none;
+  }
 
+}
 @media all and (max-width: 576px) {
   .flexWrapper {
     flex-direction: column;
@@ -189,6 +195,6 @@ body {
     display: block;
     max-width: unset;
     margin-bottom: 1.5em;
-    font-size: 1.25em;
+    font-size: 1em;
   }
 }

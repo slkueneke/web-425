@@ -40,15 +40,25 @@ import { CommonModule } from '@angular/common';
         <section>
           <h2 class="font-mono subpage">Projects_</h2>
 
+          <section *ngIf="!selectedProject" class="projSec">
+            <h3 class="font-bubble">Select a project</h3>
+          </section>
+
           <section class="projSec" *ngIf="selectedProject">
             <h3 class="font-bubble">{{ selectedProject.name }}</h3>
 
             <div class="projImg">
-              <img
-                *ngIf="selectedProject.image"
-                [src]="selectedProject.image"
-                alt=""
-              />
+              <a
+                target="_blank"
+                *ngIf="selectedProject.link"
+                [href]="selectedProject.link"
+              >
+                <img
+                  *ngIf="selectedProject.image"
+                  [src]="selectedProject.image"
+                  alt=""
+                />
+              </a>
             </div>
 
             <div class="projTech">
@@ -90,7 +100,6 @@ import { CommonModule } from '@angular/common';
       }
 
       .projImg {
-        min-height: 300px;
         width: 100%;
         border: 1px solid #a8a892ff;
       }
@@ -100,7 +109,7 @@ import { CommonModule } from '@angular/common';
         list-style: none;
         flex-wrap: wrap;
         gap: 1em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
       }
 
       .projTech li {
@@ -108,8 +117,7 @@ import { CommonModule } from '@angular/common';
         border-radius: 4px;
         padding: 1px 5px;
         background: #dedec3;
-        font-family: "Quicksand", sans-serif;
-
+        font-family: 'Quicksand', sans-serif;
       }
 
       .projText {
@@ -123,6 +131,48 @@ import { CommonModule } from '@angular/common';
         text-align: left;
         font-size: 0.9em;
       }
+
+      @media all and (max-width: 768px) {
+        .flexWrapper .colLeft {
+          order: 1;
+          margin-bottom: 0;
+          width: 100%;
+          position: fixed;
+          bottom: 0;
+          background: #a8a892;
+          z-index: 1;
+        }
+
+        .colLeft h2 {
+          font-size: 1em;
+          text-align: center;
+        }
+
+        .colLeft ul {
+          font-size: 1em;
+          width: auto;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-evenly;
+        }
+
+        #resumeNav a.active {
+          font-weight: bold;
+        }
+
+        #resumeNav a.active::before {
+          content: none;
+        }
+
+        .projSec {
+          padding: 0 1em 0;
+        }
+      }
+    @media (max-width: 576px) {
+      .colRight p {
+        font-size: 1em;
+      }
+  }
     `,
   ],
 })
@@ -136,8 +186,8 @@ export class ProjectsComponent {
       {
         id: 'bio-site',
         name: 'Bio Site',
-        image: '',
-        link: '',
+        image: '/biosite.png',
+        link: 'https://slkueneke.github.io/bioSite/',
         tech: ['HTML5', 'CSS3', 'JavaScript'],
         desc: 'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
         learnings:
@@ -146,8 +196,8 @@ export class ProjectsComponent {
       {
         id: 'rpg',
         name: 'RPG Character Builder',
-        image: '',
-        link: '',
+        image: '/rpg.png',
+        link: 'https://github.com/slkueneke/web-425/tree/master/rpg-character-builder',
         tech: ['Angular', 'TypeScript', 'HTML5', 'CSS3'],
         desc: 'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
         learnings:

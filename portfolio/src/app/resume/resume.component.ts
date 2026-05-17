@@ -74,7 +74,7 @@ import { CommonModule } from '@angular/common';
             </li>
           </ul>
 
-          <button class="cta cta-onDark">
+          <button class="cta cta-onDark desktop">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path
                 fill="#1f1f1f"
@@ -85,6 +85,21 @@ import { CommonModule } from '@angular/common';
           </button>
 
           <ul _ngcontent-ng-c3469074573="" id="socialLinks">
+            <li>
+              <a title="Download resume" class="mobile tablet">
+                <svg
+                  _ngcontent-ng-c2944580614=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    _ngcontent-ng-c2944580614=""
+                    fill="#1f1f1f"
+                    d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
             <li _ngcontent-ng-c3469074573="">
               <a
                 _ngcontent-ng-c3469074573=""
@@ -405,20 +420,39 @@ import { CommonModule } from '@angular/common';
     }
 
     @media all and (max-width: 768px) {
+      .flexWrapper .colLeft {
+        order: 1;
+        margin-bottom: 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: #a8a892;
+        z-index: 1;
+      }
+
+      #socialLinks {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: initial;
+        margin-top:0;
+      }
+
       #resumeNav button {
         margin: 0 auto;
         max-width: 80%;
+        display:none;
       }
 
       .flexWrapper {
         flex-direction: column;
       }
 
-      .colLeft {
+      /*.colLeft {
         order: 1;
         margin-bottom: 1em;
         width: 100%;
-      }
+      }*/
 
       .colLeft h2 {
         font-size: 1em;
@@ -441,14 +475,6 @@ import { CommonModule } from '@angular/common';
         content: none;
       }
 
-      #resumeNav button {
-        padding: 8px;
-        font-size: 0.8em;
-        max-width: fit-content;
-        margin: 0 auto;
-        display: block;
-      }
-
       .colRight {
         order: 2;
         width: 100%;
@@ -465,7 +491,6 @@ export class ResumeComponent {
   skills: ResumeSkills;
   certifications: ResumeCertifications[];
   education: ResumeEducation[];
-
 
   constructor() {
     this.experience = [
@@ -515,6 +540,7 @@ export class ResumeComponent {
         'REST APIs',
         'Test Driven Development (TDD)',
         'Responsive Web Design',
+        'MEAN Stack Development'
       ],
       busSkill: [
         'Digital Optimization',
