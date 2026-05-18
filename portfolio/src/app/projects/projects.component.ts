@@ -1,16 +1,15 @@
 export interface Projects {
-  id: string,
-  name: string,
-  image: string,
-  link: string,
-  tech: string[],
-  desc: string,
-  learnings: string
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+  tech: string[];
+  desc: string;
+  learnings: string;
 }
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-projects',
@@ -86,8 +85,8 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [
     `
-      #resumeNav li:hover,
-      .bounce:hover {
+      /*LEFT COL PROJECT NAV*/
+      #resumeNav li:hover {
         cursor: pointer;
       }
 
@@ -99,11 +98,13 @@ import { CommonModule } from '@angular/common';
         content: '> ';
       }
 
+      /*PROJECT IMAGES*/
       .projImg {
         width: 100%;
         border: 1px solid #a8a892ff;
       }
 
+      /*TECHNOLOGY USED PILLS*/
       .projTech ul {
         display: flex;
         list-style: none;
@@ -120,6 +121,7 @@ import { CommonModule } from '@angular/common';
         font-family: 'Quicksand', sans-serif;
       }
 
+      /*PROJECT DESC/LEARNINGS TEXT*/
       .projText {
         display: flex;
         flex-direction: row;
@@ -132,6 +134,7 @@ import { CommonModule } from '@angular/common';
         font-size: 0.9em;
       }
 
+      /*TABLETS*/
       @media all and (max-width: 768px) {
         .flexWrapper .colLeft {
           order: 1;
@@ -168,11 +171,13 @@ import { CommonModule } from '@angular/common';
           padding: 0 1em 0;
         }
       }
-    @media (max-width: 576px) {
-      .colRight p {
-        font-size: 1em;
+
+      /*PHONES*/
+      @media (max-width: 576px) {
+        .colRight p {
+          font-size: 1em;
+        }
       }
-  }
     `,
   ],
 })
@@ -189,9 +194,9 @@ export class ProjectsComponent {
         image: '/biosite.png',
         link: 'https://slkueneke.github.io/bioSite/',
         tech: ['HTML5', 'CSS3', 'JavaScript'],
-        desc: 'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+        desc: 'Creation of a responsive bio site for my friend, Fritzie Dizon. This site showcases details about her personal and professional life.',
         learnings:
-          'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+          "Learned how to maintain my own design style while taking into consideration the client's preferences and requirements. Ensured the site remained interesting and accessible for all screen sizes.",
       },
       {
         id: 'rpg',
@@ -199,9 +204,9 @@ export class ProjectsComponent {
         image: '/rpg.png',
         link: 'https://github.com/slkueneke/web-425/tree/master/rpg-character-builder',
         tech: ['Angular', 'TypeScript', 'HTML5', 'CSS3'],
-        desc: 'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+        desc: 'Built a full, stateful, component-driven Angular application based around creating RPG characters for offline play.',
         learnings:
-          'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+          'Learned real-world patterns: data modeling, form handling, TypeScript discipline, environment stability, debugging, and scalable UI architecture.',
       },
     ];
   }

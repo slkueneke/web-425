@@ -96,7 +96,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
                 >Projects</a
               >
             </li>
-            <li>
+            <li class="noBefore">
               <ul id="nav_socialLinks">
                 <li>
                   <a
@@ -150,7 +150,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="noBefore">
               <a
                 id="navClose"
                 href="javascript:;"
@@ -573,7 +573,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
           width: 30px;
         }
 
-        nav.mobile.tablet ul li:not(:last-child):hover::before {
+        nav.mobile.tablet > ul > li:not(.noBefore):hover::before {
           content: '> ';
         }
 
@@ -611,7 +611,7 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
         }
 
         #footer_siteNav {
-          padding-top:2em;
+          padding-top: 2em;
         }
         /*footer nav ul {
           flex-direction: column;
@@ -665,6 +665,11 @@ import { RouterLink, RouterOutlet, RouterModule } from '@angular/router';
 
         #animation {
           white-space: normal;
+        }
+
+        .content {
+          padding: 65px 0 80px 0;
+          max-width:100%;
         }
 
         .mobile.tablet svg {

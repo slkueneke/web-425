@@ -22,11 +22,7 @@ import { Router, RouterLink } from '@angular/router';
         <section>
           <h2 class="font-mono color-dark">Hi, I'm Shannon.</h2>
           <p class="font-clean color-grey">
-            intro copy here in quicksand font, carbon black dolor sit amet,
-            consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-            pellentesque eu, pretium quis, sem.
+            I'm a developer who loves turning ideas into interactive, beautifully structured digital experiences. From character builders to real-world apps, I craft clean, modular systems powered by modern front and back-end engineering.
           </p>
           <button class="cta" routerLink="/resume">View Resume</button>
           <button class="cta" routerLink="/projects">My Projects</button>
@@ -57,11 +53,8 @@ import { Router, RouterLink } from '@angular/router';
       }
 
       .colRight p {
-        font-size:1.2em;
+        font-size: 1.2em;
       }
-
-
-
     `,
   ],
 })

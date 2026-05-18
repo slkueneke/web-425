@@ -271,6 +271,20 @@ import { CommonModule } from '@angular/common';
                 </li>
               }
             </ul>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-up bounce"
+              viewBox="0 0 16 16"
+              (click)="scrollToSection('experience')"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+              />
+            </svg>
           </section>
         </section>
       </section>
@@ -337,7 +351,7 @@ import { CommonModule } from '@angular/common';
     }
 
     .resumeSec svg {
-      width: 30px;
+      width: 16px;
       margin: 0 auto;
       display: block;
     }
@@ -353,6 +367,10 @@ import { CommonModule } from '@angular/common';
 
     #experience li:last-child {
       margin-top: 1em;
+    }
+
+    #experience > ul:nth-child(4) {
+      margin-bottom:1em;
     }
 
     #skills ul {
@@ -435,13 +453,13 @@ import { CommonModule } from '@angular/common';
         justify-content: center;
         flex-wrap: wrap;
         width: initial;
-        margin-top:0;
+        margin-top: 0;
       }
 
       #resumeNav button {
         margin: 0 auto;
         max-width: 80%;
-        display:none;
+        display: none;
       }
 
       .flexWrapper {
@@ -540,7 +558,7 @@ export class ResumeComponent {
         'REST APIs',
         'Test Driven Development (TDD)',
         'Responsive Web Design',
-        'MEAN Stack Development'
+        'MEAN Stack Development',
       ],
       busSkill: [
         'Digital Optimization',

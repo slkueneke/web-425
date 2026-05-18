@@ -158,6 +158,8 @@ body {
     display:none;
   }
 
+
+
 }
 @media all and (max-width: 576px) {
   .flexWrapper {
@@ -169,9 +171,7 @@ body {
     width: 100%;
   }
 
-  .colRight p {
-    font-size: 1.5em;
-  }
+
 
   .colLeft {
     order: 2;
