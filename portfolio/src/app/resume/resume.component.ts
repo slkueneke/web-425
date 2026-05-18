@@ -74,7 +74,11 @@ import { CommonModule } from '@angular/common';
             </li>
           </ul>
 
-          <button class="cta cta-onDark desktop">
+          <a
+            href="ShannonKueneke-Resume2026.pdf"
+            download="ShannonKueneke-Resume2026.pdf"
+            class="cta cta-onDark desktop"
+          >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path
                 fill="#1f1f1f"
@@ -82,11 +86,16 @@ import { CommonModule } from '@angular/common';
               />
             </svg>
             Download Resume
-          </button>
+          </a>
 
           <ul _ngcontent-ng-c3469074573="" id="socialLinks">
             <li>
-              <a title="Download resume" class="mobile tablet">
+              <a
+                href="ShannonKueneke-Resume2026.pdf"
+                download="ShannonKueneke-Resume2026.pdf"
+                title="Download resume"
+                class="mobile tablet"
+              >
                 <svg
                   _ngcontent-ng-c2944580614=""
                   xmlns="http://www.w3.org/2000/svg"
@@ -291,9 +300,11 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
   styles: `
-    #resumeNav button {
+    #resumeNav a.cta {
       margin-left: 2em;
       margin-top: 3em;
+      display: block;
+      font-size: 0.8em;
     }
 
     #resumeNav svg {
@@ -370,7 +381,7 @@ import { CommonModule } from '@angular/common';
     }
 
     #experience > ul:nth-child(4) {
-      margin-bottom:1em;
+      margin-bottom: 1em;
     }
 
     #skills ul {
@@ -456,7 +467,7 @@ import { CommonModule } from '@angular/common';
         margin-top: 0;
       }
 
-      #resumeNav button {
+      #resumeNav a.cta {
         margin: 0 auto;
         max-width: 80%;
         display: none;
@@ -519,7 +530,7 @@ export class ResumeComponent {
         startDate: 'April 2018',
         endDate: 'Present',
         description:
-          'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+          'Engineers end-to-end A/B, multivariate, and personalization tests, translating business requirements into technical specs, coding test logic, validating functionality, and ensuring compliance with the design ecosystem.',
       },
       {
         jobTitle: 'Lead Technical Consultant / Solutions Engineer',
@@ -528,7 +539,7 @@ export class ResumeComponent {
         startDate: 'July 2013',
         endDate: 'April 2018',
         description:
-          'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+          'Engineers advanced A/B and multivariate tests in Maxymiser using JavaScript, jQuery, HTML, and CSS, delivering custom solutions, ensuring cross-browser quality, and troubleshooting complex issues. Leads the self-serve Solutions Engineering team, trains clients on best practices, and provides product feedback to improve platform capabilities.',
       },
       {
         jobTitle: 'Front End Development Intern',
@@ -537,7 +548,7 @@ export class ResumeComponent {
         startDate: 'January 2013',
         endDate: 'June 2013',
         description:
-          'dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.',
+          'Develop responsive marketing webpages from requirements, implement HTML/CSS best practices, troubleshoot compatibility issues, and extend existing functionality through PHP, JavaScript, video encoding, and database manipulation.',
       },
     ];
     ((this.skills = {

@@ -1,8 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
 /*fonts*/
-.font-outline {
-  font-family: "Tourney", sans-serif;
-}
 .font-bubble {
   font-family: "Bungee Shade", sans-serif;
 }
@@ -61,8 +57,6 @@ a:hover {
 
 body {
   background-color: #f5f5f4;
-  /*background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
-  background-size: 20px 20px; /* Adjust spacing between dots */
 }
 
 .content p,
@@ -93,7 +87,8 @@ body {
   margin: 0;
 }
 
-.cta {
+.cta,
+.content a.cta {
   background-color: #a8a892ff;
   border: 3px solid rgb(102, 102, 88);
   padding: 10px 15px;
@@ -104,23 +99,25 @@ body {
   font-family: "Google Sans Code", monospace;
 }
 
-.cta:hover {
+.cta:hover,
+.content a.cta:hover {
   background-color: #4c4c47ff;
   border-color: #a8a892ff;
   color: #f5f5f4;
 }
 
-.cta-onDark {
+.cta-onDark,
+.content a.cta-onDark {
   border-color: #1b1b1bff;
   background-color:#f5f5f4;
   color: #4c4c47ff;
 }
 
-.cta-onDark:hover {
+.cta-onDark:hover,
+.content a.cta-onDark:hover {
   background-color: #4c4c47ff;
   border-color: #1b1b1bff;
 }
-
 
 .flexWrapper {
   display: flex;
@@ -129,13 +126,11 @@ body {
 
 .colLeft {
   flex-grow: 1;
-  /*order: 2;*/
   width: 40%;
 }
 
 .colRight {
   flex-grow: 2;
-  /*order:1;*/
   width: 60%;
 }
 
@@ -157,10 +152,8 @@ body {
   .cta.desktop {
     display:none;
   }
-
-
-
 }
+
 @media all and (max-width: 576px) {
   .flexWrapper {
     flex-direction: column;
@@ -170,8 +163,6 @@ body {
     order: 1;
     width: 100%;
   }
-
-
 
   .colLeft {
     order: 2;
